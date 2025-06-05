@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 1000px;
+            display: flex;
+            gap: 30px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-left, .form-right {
+            flex: 1;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .message {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .login-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form class="form-container" action="register.php" method="POST">
+        <div class="form-left">
+            <div class="logo">
+                <img src="cfcst.png" alt="School Logo">
+            </div>
+            <h2>Student Registration</h2>
+
+            <!-- Optional message -->
+            <p class="message" id="message-box"></p>
+
+            <input type="text" name="studentID_no" placeholder="Student ID No" required>
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="middle_name" placeholder="Middle Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="text" name="course" placeholder="Course" required>
+            <input type="text" name="year_level" placeholder="Year Level" required>
+        </div>
+
+        <div class="form-right">
+            <input type="date" name="date_ofbirth" required>
+            <select name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <input type="text" name="complete_address" placeholder="Complete Address" required>
+            <input type="email" name="email_address" placeholder="Email Address" required>
+            <input type="text" name="mobile_number" placeholder="Mobile Number" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+
+            <div class="login-link">
+                Already have an account? <a href="index.html">Login here</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
