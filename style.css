@@ -10,14 +10,14 @@ body {
   justify-content: center;
   align-items: center;
 }
-.card {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  padding: 30px 35px;
-  max-width: 400px;
-  width: 100%;
-  animation: fadeIn 1s ease-in-out;
+ .card {
+      animation: fadeIn 1s ease-in-out;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 360px;
+      padding: 25px 20px;
+      background-color: white;
 }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
