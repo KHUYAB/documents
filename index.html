@@ -1,32 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Student Login</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+
+  <!-- Bootstrap & Font Awesome -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('assets/images/CFCST.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 20px;
+    }
+
+    .card {
+      animation: fadeIn 1s ease-in-out;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 360px;
+      padding: 25px 20px;
+      background-color: white;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo-img {
+      height: 80px;
+    }
+
+    .form-control {
+      font-size: 15px;
+      padding: 10px 15px;
+    }
+
+    .button1 {
+      background-color: white;
+      color: black;
+      border: 2px solid #d6a92b;
+      transition: 0.3s ease;
+    }
+
+    .button1:hover {
+      background-color: #d6a92b;
+      color: white;
+    }
+
+    .text-small {
+      font-size: 14px;
+    }
+  </style>
 </head>
-<body style="background-image: url('images/CFCST.jpg'); background-size: cover; background-position: center;">
+
+<body>
   <div class="card">
-    <img src="cfcst.png" alt="Logo">
-    <h5>Student Login</h5>
+    <div class="text-center">
+      <img src="assets/images/cfcst.png" alt="logo" class="logo-img mb-2">
+      <h5 class="font-weight-bold">Student Login</h5>
+    </div>
+
     <form method="post" name="login_sform">
-      <div class="form-group input-icon" data-icon="👤">
-        <input type="text" placeholder="Username" name="username" autocomplete="off" required>
+      <!-- Username -->
+      <div class="form-group mt-3">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+          </div>
+          <input class="form-control" id="username" type="text" placeholder="Username" autocomplete="off">
+        </div>
       </div>
-      <div class="form-group input-icon" data-icon="🔒">
-        <input type="password" placeholder="Password" name="password" id="password" autocomplete="off" required>
-      </div>
-      <div class="form-group text-small">
-        <label><input type="checkbox" onclick="togglePassword()"> Show Password</label>
-      </div>
+
+      <!-- Password -->
       <div class="form-group">
-        <button type="submit" class="btn">Login</button>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+          </div>
+          <input class="form-control" id="password" type="password" placeholder="Password" autocomplete="off">
+        </div>
       </div>
-      <div class="text-small" style="text-align: center;">
-        Wala ka pang account?
-        <a href="registration.html">Mag-register dito</a>
+
+      <div class="form-group text-small">
+        <label class="custom-control custom-checkbox">
+          <input class="custom-control-input" type="checkbox" onclick="myFunction()">
+          <span class="custom-control-label">Show Password</span>
+        </label>
       </div>
+
+      <div class="form-group">
+        <button class="btn btn-block button1" type="submit" id="btn-student">Login</button>
+      </div>
+
+      <div class="text-center text-small mt-2">
+        <p>Wala ka pang account? <a href="Student/registration.php" class="text-primary font-weight-bold">Mag-register dito</a></p>
+      </div>
+
+      <div id="alert-msg"></div>
     </form>
   </div>
 </body>
