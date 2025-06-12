@@ -35,6 +35,7 @@
       max-width: 360px;
       padding: 25px 20px;
       background-color: white;
+      text-align: center; /* Centers content inside the card */
     }
 
     @keyframes fadeIn {
@@ -72,15 +73,17 @@
     .text-small {
       font-size: 14px;
     }
+
+    .input-group {
+      text-align: left;
+    }
   </style>
 </head>
 
 <body>
   <div class="card">
-    <div class="text-center">
-      <img src="images/cfcst.png" alt="logo" class="logo-img mb-2">
-      <h5 class="font-weight-bold">Student Login</h5>
-    </div>
+    <img src="images/cfcst.png" alt="logo" class="logo-img mb-2">
+    <h5 class="font-weight-bold mb-3">Student Login</h5>
 
     <form>
       <!-- Username -->
@@ -103,7 +106,7 @@
         </div>
       </div>
 
-      <div class="form-group text-small">
+      <div class="form-group text-small text-left">
         <label class="custom-control custom-checkbox">
           <input class="custom-control-input" type="checkbox" onclick="togglePassword()">
           <span class="custom-control-label">Show Password</span>
