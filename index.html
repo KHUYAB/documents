@@ -82,14 +82,14 @@
       <h5 class="font-weight-bold">Student Login</h5>
     </div>
 
-    <form method="post" name="login_sform">
+    <form>
       <!-- Username -->
       <div class="form-group mt-3">
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fas fa-user"></i></span>
           </div>
-          <input class="form-control" id="username" type="text" placeholder="Username" autocomplete="off">
+          <input class="form-control" id="username" type="text" placeholder="Username" autocomplete="off" required>
         </div>
       </div>
 
@@ -99,13 +99,13 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fas fa-lock"></i></span>
           </div>
-          <input class="form-control" id="password" type="password" placeholder="Password" autocomplete="off">
+          <input class="form-control" id="password" type="password" placeholder="Password" autocomplete="off" required>
         </div>
       </div>
 
       <div class="form-group text-small">
         <label class="custom-control custom-checkbox">
-          <input class="custom-control-input" type="checkbox" onclick="myFunction()">
+          <input class="custom-control-input" type="checkbox" onclick="togglePassword()">
           <span class="custom-control-label">Show Password</span>
         </label>
       </div>
@@ -115,11 +115,18 @@
       </div>
 
       <div class="text-center text-small mt-2">
-        <p>Wala ka pang account? <a href="Student/registration.php" class="text-primary font-weight-bold">Mag-register dito</a></p>
+        <p>Wala ka pang account? <a href="#" class="text-primary font-weight-bold">Mag-register dito</a></p>
       </div>
 
       <div id="alert-msg"></div>
     </form>
   </div>
+
+  <script>
+    function togglePassword() {
+      const passwordField = document.getElementById("password");
+      passwordField.type = passwordField.type === "password" ? "text" : "password";
+    }
+  </script>
 </body>
 </html>
